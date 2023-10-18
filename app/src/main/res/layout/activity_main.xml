@@ -20,7 +20,9 @@
         android:id="@+id/operand1EditText"
         android:hint="@string/operand1"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/baseline_numbers_24"
         />
+
 
     <EditText
         android:layout_width="match_parent"
