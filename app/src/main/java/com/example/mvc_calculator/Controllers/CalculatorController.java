@@ -37,11 +37,31 @@ public class CalculatorController {
         model.divide(operand1,operand2);
         updateView();
     }
+
+
+    public void onLogButtonClicked(double operand1, double operand2) {
+
+        model.logarithm(operand1,operand2);
+        updateView();
+    }
+
+    public void onPowerButtonClicked(double operand1, double operand2) {
+        model.power(operand1,operand2);
+        updateView();
+    }
+
+    public void onRootButtonClicked(double operand1) {
+        model.root(operand1);
+        updateView();
+    }
+
+
     public void onClearButtonClicked(){
        operand1EditText.setText("");
        operand2EditText.setText("");
        resultTextView.setText("0");
     }
+
     private void updateView(){
         double result = model.getResult();
         resultTextView.setText(String.valueOf(result));

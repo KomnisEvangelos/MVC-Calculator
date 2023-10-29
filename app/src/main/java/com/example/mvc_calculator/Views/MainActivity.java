@@ -69,8 +69,32 @@ public class MainActivity extends AppCompatActivity {
 
         controller.onDivisionButtonClicked(operand1,operand2);
     }
+
+
+    public void onLogButtonClicked(View v) {
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString()); //Base
+
+        controller.onLogButtonClicked(operand1,operand2);
+    }
+
+    public void onPowerButtonClicked (View v) {
+
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString()); //Base
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString());  //Exponent
+
+        controller.onPowerButtonClicked(operand1,operand2);
+    }
+
+    public void onRootButtonClicked (View v) {
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+
+        controller.onRootButtonClicked(operand1);
+    }
+
     public void onClearButtonClicked(View v){
         controller.onClearButtonClicked();
     }
+
 
 }
