@@ -70,5 +70,14 @@
         android:text="/"
         android:onClick="onDivisionButtonClicked"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/ClearBtn"
+        android:text="C"
+        android:onClick="onClearButtonClicked"
+        />
 
 </LinearLayout>
