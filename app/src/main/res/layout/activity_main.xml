@@ -51,4 +51,23 @@
         android:onClick="onSubtractButtonClicked"
         />
 
+    <Button
+        android:id="@+id/multiplyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onMultiplyButtonClicked"
+        android:shadowColor="@color/white"
+        android:text="*"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/divisionBtn"
+        android:text="/"
+        android:onClick="onDivisionButtonClicked"
+        />
+
 </LinearLayout>
