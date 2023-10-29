@@ -26,12 +26,13 @@ public class CalculatorModel {
     public void divide(double operand1, double operand2) {
 
         if (operand2 != 0) {
-            this.result = operand1 + operand2;
+            this.result = operand1 / operand2;
         }else{
             this.result = Double.NaN;
         }
     }
 
+<
     public void sine(double operand1){
 
         if (isRad()){
@@ -57,6 +58,23 @@ public class CalculatorModel {
             this.result = Math.tan(degrees);
         }
     }
+
+
+
+    public void logarithm(double operand1, double operand2) {
+        this.result = (Math.log(operand1) / Math.log(operand2));
+    }
+
+    public void power(double operand1, double operand2) {
+        this.result = Math.pow(operand1,operand2);
+    }
+
+    public void root(double operand1) {
+
+        this.result = Math.sqrt(operand1);
+    }
+
+
 
     public double getResult() {
         return result;

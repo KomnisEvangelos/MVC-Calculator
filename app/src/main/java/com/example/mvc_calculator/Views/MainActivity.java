@@ -29,15 +29,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        model = new CalculatorModel();
         TextView resultTextView = findViewById(R.id.resultTextView);
-        degSwt = findViewById(R.id.degSwt);
-        controller = new CalculatorController(model,resultTextView,degSwt);
-
         operand1EditText = findViewById(R.id.operand1EditText);
         operand2EditText = findViewById(R.id.operand2EditText);
+        degSwt = findViewById(R.id.degSwt);
+       
+        model = new CalculatorModel();
+        controller = new CalculatorController(model,resultTextView,operand1EditText,operand2EditText,degSwt);
 
-
+      
+  
         Button addBtn = findViewById(R.id.addBtn);
         Button subtractBtn = findViewById(R.id.subtractBtn);
         Button sineBtn = findViewById(R.id.sineBtn);
@@ -93,9 +94,53 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void onCosineButtonClicked(View v){
         double operand1 = Double.parseDouble(operand1EditText.getText().toString());
 
         controller.onCosineButtonClicked(operand1);
     }
+
+    public void onMultiplyButtonClicked(View v){
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString());
+
+        controller.onMultiplyButtonClicked(operand1,operand2);
+
+    }
+    public void onDivisionButtonClicked(View v){
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString());
+
+        controller.onDivisionButtonClicked(operand1,operand2);
+    }
+
+
+    public void onLogButtonClicked(View v) {
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString()); //Base
+
+        controller.onLogButtonClicked(operand1,operand2);
+    }
+
+    public void onPowerButtonClicked (View v) {
+
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString()); //Base
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString());  //Exponent
+
+        controller.onPowerButtonClicked(operand1,operand2);
+    }
+
+    public void onRootButtonClicked (View v) {
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+
+        controller.onRootButtonClicked(operand1);
+    }
+
+    public void onClearButtonClicked(View v){
+        controller.onClearButtonClicked();
+    }
+
+
+
 }

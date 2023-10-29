@@ -14,14 +14,14 @@
         android:textSize="24sp"
         android:textAlignment="center"
         />
+
     <EditText
+        android:id="@+id/operand1EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/operand1EditText"
-        android:hint="@string/operand1"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/baseline_numbers_24"
-        />
+        android:hint="@string/operand1" />
 
 
     <EditText
@@ -30,18 +30,23 @@
         android:id="@+id/operand2EditText"
         android:hint="@string/operand2"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/baseline_numbers_24"
         />
 
     <Button
+
+        android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:contentDescription="This is an ADD button"
         android:shadowColor="@color/white"
-        android:textColor="@color/black"
         android:text="+"
-        android:id="@+id/addBtn"
-        />
+        android:textColor="@color/black"
+        tools:src="@drawable/buttonplusshadow" />
 
     <Button
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"
@@ -52,12 +57,23 @@
         />
 
     <Button
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"
         android:textColor="@color/black"
         android:text="sin"
         android:id="@+id/sineBtn"
+        />
+
+    <Button
+        android:id="@+id/multiplyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onMultiplyButtonClicked"
+        android:shadowColor="@color/white"
+        android:text="*"
+        android:textColor="@color/black"
         />
 
     <Button
@@ -68,6 +84,21 @@
         android:text="cos"
         android:id="@+id/cosineBtn"
         android:onClick="onCosineButtonClicked"
+      
+        <Button
+        android:id="@+id/divisionBtn"
+        android:text="/"
+        android:onClick="onDivisionButtonClicked"
+        />
+  
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/ClearBtn"
+        android:text="C"
+        android:onClick="onClearButtonClicked"
         />
 
     <Button
@@ -88,5 +119,32 @@
         android:text="Deg"
         android:checked="true"
         />
+
+<Button
+        android:id="@+id/logBtn"
+        android:text="log"
+        android:onClick="onLogButtonClicked"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/powerBtn"
+        android:text="x^y"
+        android:onClick="onPowerButtonClicked"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/rootBtn"
+        android:text="√x"
+        android:onClick="onRootButtonClicked"
+        />
+
 
 </LinearLayout>
