@@ -64,7 +64,6 @@
         android:textColor="@color/black"
         />
     <Button
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"
@@ -75,7 +74,6 @@
         />
 
     <Button
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"
@@ -86,7 +84,6 @@
         />
 
     <Button
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"
@@ -97,7 +94,6 @@
         />
 
     <Button
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"

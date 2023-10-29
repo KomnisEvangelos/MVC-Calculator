@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         double operand1 = Double.parseDouble(operand1EditText.getText().toString());
         double operand2 = Double.parseDouble(operand2EditText.getText().toString());
 
-
         controller.onDivisionButtonClicked(operand1,operand2);
     }
 
