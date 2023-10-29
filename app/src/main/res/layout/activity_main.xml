@@ -14,14 +14,14 @@
         android:textSize="24sp"
         android:textAlignment="center"
         />
+
     <EditText
+        android:id="@+id/operand1EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/operand1EditText"
-        android:hint="@string/operand1"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/baseline_numbers_24"
-        />
+        android:hint="@string/operand1" />
 
 
     <EditText
@@ -34,13 +34,15 @@
         />
 
     <Button
+        android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:contentDescription="This is an ADD button"
         android:shadowColor="@color/white"
-        android:textColor="@color/black"
         android:text="+"
-        android:id="@+id/addBtn"
-        />
+        android:textColor="@color/black"
+        tools:src="@drawable/buttonplusshadow" />
 
     <Button
         android:layout_width="wrap_content"
@@ -70,5 +72,36 @@
         android:text="/"
         android:onClick="onDivisionButtonClicked"
         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/logBtn"
+        android:text="log"
+        android:onClick="onLogButtonClicked"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/powerBtn"
+        android:text="x^y"
+        android:onClick="onPowerButtonClicked"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:id="@+id/rootBtn"
+        android:text="√x"
+        android:onClick="onRootButtonClicked"
+        />
+
 
 </LinearLayout>

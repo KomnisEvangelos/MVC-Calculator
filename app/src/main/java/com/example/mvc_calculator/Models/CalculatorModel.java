@@ -23,6 +23,18 @@ public class CalculatorModel {
         }
     }
 
+    public void logarithm(double operand1, double operand2) {
+        this.result = (Math.log(operand1) / Math.log(operand2));
+    }
+
+    public void power(double operand1, double operand2) {
+        this.result = Math.pow(operand1,operand2);
+    }
+
+    public void root(double operand1) {
+        this.result = Math.sqrt(operand1);
+    }
+
     public double getResult() {
         return result;
     }
