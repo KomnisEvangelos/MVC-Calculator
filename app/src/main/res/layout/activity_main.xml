@@ -30,6 +30,7 @@
         android:id="@+id/operand2EditText"
         android:hint="@string/operand2"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/baseline_numbers_24"
         />
 
     <Button
