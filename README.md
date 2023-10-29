@@ -36,7 +36,7 @@ Komnis Evangelos
 
 Stoidis Athanasios
 
-Makri Stiliani
+Makri Styliani
 
 Lagiokapas Dimitrios
 
