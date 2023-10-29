@@ -17,7 +17,7 @@ public class CalculatorModel {
     public void divide(double operand1, double operand2) {
 
         if (operand2 != 0) {
-            this.result = operand1 + operand2;
+            this.result = operand1 / operand2;
         }else{
             this.result = Double.NaN;
         }
