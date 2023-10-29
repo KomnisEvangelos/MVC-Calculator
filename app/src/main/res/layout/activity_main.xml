@@ -57,6 +57,16 @@
         />
 
     <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:text="sin"
+        android:id="@+id/sineBtn"
+        />
+
+    <Button
         android:id="@+id/multiplyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,15 +75,22 @@
         android:text="*"
         android:textColor="@color/black"
         />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"
         android:textColor="@color/black"
+        android:text="cos"
+        android:id="@+id/cosineBtn"
+        android:onClick="onCosineButtonClicked"
+      
+        <Button
         android:id="@+id/divisionBtn"
         android:text="/"
         android:onClick="onDivisionButtonClicked"
         />
+  
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,6 +106,21 @@
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"
         android:textColor="@color/black"
+        android:text="tan"
+        android:id="@+id/tangentBtn"
+        android:onClick="onTangentButtonClicked"
+        />
+
+
+    <Switch
+        android:id="@+id/degSwt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deg"
+        android:checked="true"
+        />
+
+<Button
         android:id="@+id/logBtn"
         android:text="log"
         android:onClick="onLogButtonClicked"

@@ -1,6 +1,9 @@
 package com.example.mvc_calculator.Controllers;
 
+import android.widget.Switch;
+
 import android.widget.EditText;
+
 import android.widget.TextView;
 
 import com.example.mvc_calculator.Models.CalculatorModel;
@@ -8,14 +11,18 @@ import com.example.mvc_calculator.Models.CalculatorModel;
 public class CalculatorController {
     private CalculatorModel model;
     private TextView resultTextView;
+    private Switch degSwt;
     private EditText operand1EditText;
     private EditText operand2EditText;
-
-    public CalculatorController(CalculatorModel model, TextView resultTextView,EditText operand1EditText,EditText operand2EditText) {
+  
+    public CalculatorController(CalculatorModel model, TextView resultTextView,EditText operand1EditText,
+                                EditText operand2EditText,Switch degSwt) {
         this.model = model;
         this.resultTextView = resultTextView;
         this.operand1EditText = operand1EditText;
         this.operand2EditText = operand2EditText;
+         this.degSwt = degSwt;
+
 
     }
 
@@ -62,8 +69,33 @@ public class CalculatorController {
        resultTextView.setText("0");
     }
 
+    public void onSineButtonClicked(double operand1){
+        model.sine(operand1);
+        updateView();
+    }
+
+    public void onCosineButtonClicked(double operand1){
+        model.cosine(operand1);
+        updateView();
+    }
+
+    public void onTangentButtonClicked(double operand1){
+        model.tangent(operand1);
+        updateView();
+    }
+
     private void updateView(){
         double result = model.getResult();
         resultTextView.setText(String.valueOf(result));
+    }
+
+    public void onSwitchClicked(boolean isChecked){
+        if (isChecked) {
+            model.setRadStatus(false);
+            degSwt.setText("degres");
+        }else{
+            model.setRadStatus(true);
+            degSwt.setText("radius");
+        }
     }
 }

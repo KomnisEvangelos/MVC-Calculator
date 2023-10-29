@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="operand1">operand1</string>
-    <string name="operand2">operand 2\n</string>
+    <string name="operand2">operand2</string>
 </resources>
