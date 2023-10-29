@@ -23,6 +23,7 @@ public class CalculatorModel {
         }
     }
 
+
     public void logarithm(double operand1, double operand2) {
         this.result = (Math.log(operand1) / Math.log(operand2));
     }
@@ -35,6 +36,7 @@ public class CalculatorModel {
 
         this.result = Math.sqrt(operand1);
     }
+
 
     public double getResult() {
         return result;

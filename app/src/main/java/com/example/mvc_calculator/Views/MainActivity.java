@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        model = new CalculatorModel();
         TextView resultTextView = findViewById(R.id.resultTextView);
-        controller = new CalculatorController(model,resultTextView);
-
         operand1EditText = findViewById(R.id.operand1EditText);
         operand2EditText = findViewById(R.id.operand2EditText);
+
+        model = new CalculatorModel();
+        controller = new CalculatorController(model,resultTextView,operand1EditText,operand2EditText);
 
         Button addBtn = findViewById(R.id.addBtn);
         Button subtractBtn = findViewById(R.id.subtractBtn);
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         controller.onDivisionButtonClicked(operand1,operand2);
     }
 
+
     public void onLogButtonClicked(View v) {
         double operand1 = Double.parseDouble(operand1EditText.getText().toString());
         double operand2 = Double.parseDouble(operand2EditText.getText().toString()); //Base
@@ -90,4 +91,10 @@ public class MainActivity extends AppCompatActivity {
 
         controller.onRootButtonClicked(operand1);
     }
+
+    public void onClearButtonClicked(View v){
+        controller.onClearButtonClicked();
+    }
+
+
 }
