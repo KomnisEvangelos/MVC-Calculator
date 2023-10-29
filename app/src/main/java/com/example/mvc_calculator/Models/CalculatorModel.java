@@ -32,6 +32,7 @@ public class CalculatorModel {
     }
 
     public void root(double operand1) {
+
         this.result = Math.sqrt(operand1);
     }
 

@@ -33,6 +33,7 @@ public class CalculatorController {
     }
 
     public void onLogButtonClicked(double operand1, double operand2) {
+
         model.logarithm(operand1,operand2);
         updateView();
     }

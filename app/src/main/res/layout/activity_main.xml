@@ -34,6 +34,7 @@
         />
 
     <Button
+
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +46,7 @@
         tools:src="@drawable/buttonplusshadow" />
 
     <Button
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/white"

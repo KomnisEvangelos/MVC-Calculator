@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPowerButtonClicked (View v) {
+
         double operand1 = Double.parseDouble(operand1EditText.getText().toString()); //Base
         double operand2 = Double.parseDouble(operand2EditText.getText().toString());  //Exponent
 
