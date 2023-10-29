@@ -23,6 +23,7 @@ public class CalculatorModel {
         }
     }
 
+
     public double getResult() {
         return result;
     }
