@@ -29,6 +29,7 @@ public class CalculatorController {
 
     public void onDivisionButtonClicked(double operand1,double operand2){
         model.divide(operand1,operand2);
+
         updateView();
     }
 
