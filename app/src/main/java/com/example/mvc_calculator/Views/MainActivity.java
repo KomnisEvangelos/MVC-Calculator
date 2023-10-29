@@ -6,7 +6,9 @@ import android.app.Application;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.mvc_calculator.Controllers.CalculatorController;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private CalculatorController controller;
     private EditText operand1EditText;
     private EditText operand2EditText;
+    private Switch degSwt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
         model = new CalculatorModel();
         TextView resultTextView = findViewById(R.id.resultTextView);
-        controller = new CalculatorController(model,resultTextView);
+        degSwt = findViewById(R.id.degSwt);
+        controller = new CalculatorController(model,resultTextView,degSwt);
 
         operand1EditText = findViewById(R.id.operand1EditText);
         operand2EditText = findViewById(R.id.operand2EditText);
 
+
         Button addBtn = findViewById(R.id.addBtn);
         Button subtractBtn = findViewById(R.id.subtractBtn);
+        Button sineBtn = findViewById(R.id.sineBtn);
+        Button cosineBtn = findViewById(R.id.cosineBtn);
+        Button tangentBtn = findViewById(R.id.tangentBtn);
+
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +56,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        sineBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+
+                controller.onSineButtonClicked(operand1);
+            }
+        });
+        tangentBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+
+                controller.onTangentButtonClicked(operand1);
+            }
+        });
+
+        degSwt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked){
+                    controller.onSwitchClicked(true);
+                }else{
+                    controller.onSwitchClicked(false);
+                }
+            }
+        });
     }
 
     public void onSubtractButtonClicked(View v){
@@ -55,5 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
         controller.onSubtractButtonClicked(operand1,operand2);
 
+    }
+
+    public void onCosineButtonClicked(View v){
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+
+        controller.onCosineButtonClicked(operand1);
     }
 }
