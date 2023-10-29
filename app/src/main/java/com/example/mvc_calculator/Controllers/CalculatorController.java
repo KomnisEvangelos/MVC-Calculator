@@ -22,6 +22,15 @@ public class CalculatorController {
         model.subtract(operand1,operand2);
         updateView();
     }
+    public void onMultiplyButtonClicked(double operand1,double operand2){
+        model.multiply(operand1,operand2);
+        updateView();
+    }
+
+    public void onDivisionButtonClicked(double operand1,double operand2){
+        model.divide(operand1,operand2);
+        updateView();
+    }
 
     private void updateView(){
         double result = model.getResult();

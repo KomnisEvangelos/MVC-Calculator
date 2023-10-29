@@ -56,4 +56,17 @@ public class MainActivity extends AppCompatActivity {
         controller.onSubtractButtonClicked(operand1,operand2);
 
     }
+    public void onMultiplyButtonClicked(View v){
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString());
+
+        controller.onMultiplyButtonClicked(operand1,operand2);
+
+    }
+    public void onDivisionButtonClicked(View v){
+        double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+        double operand2 = Double.parseDouble(operand2EditText.getText().toString());
+
+        controller.onDivisionButtonClicked(operand1,operand2);
+    }
 }
