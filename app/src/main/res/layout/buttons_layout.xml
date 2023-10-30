@@ -22,7 +22,7 @@
             android:layout_margin="3dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_columnWeight="1"/>
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/clear"
@@ -35,7 +35,7 @@
             android:layout_margin="3dp"
             android:layout_row="0"
             android:layout_column="1"
-            android:layout_columnWeight="1"
+
             android:onClick="onClearButtonClicked"
             />
 
@@ -50,7 +50,7 @@
             android:layout_margin="3dp"
             android:layout_row="0"
             android:layout_column="2"
-            android:layout_columnWeight="1"/>
+              />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/divisionBtn"
@@ -63,7 +63,7 @@
             android:layout_margin="3dp"
             android:layout_row="0"
             android:layout_column="3"
-            android:layout_columnWeight="1"
+
             android:onClick="onDivisionButtonClicked"
             />
 
@@ -73,13 +73,14 @@
             android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="0"
-            android:layout_columnWeight="1"
+
             android:text="7"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton7Clicked"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn8"
@@ -87,13 +88,14 @@
             android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="1"
-            android:layout_columnWeight="1"
+
             android:text="8"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton8Clicked"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn9"
@@ -101,13 +103,14 @@
             android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="2"
-            android:layout_columnWeight="1"
+
             android:text="9"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton9Clicked"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/multiplyBtn"
@@ -120,7 +123,6 @@
             android:layout_marginLeft="3dp"
             android:layout_row="1"
             android:layout_column="3"
-            android:layout_columnWeight="1"
             android:onClick="onMultiplyButtonClicked"
             />
 
@@ -130,13 +132,14 @@
             android:layout_height="100dp"
             android:layout_row="2"
             android:layout_column="0"
-            android:layout_columnWeight="1"
+
             android:text="4"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton4Clicked"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn5"
@@ -144,13 +147,14 @@
             android:layout_height="100dp"
             android:layout_row="2"
             android:layout_column="1"
-            android:layout_columnWeight="1"
+
             android:text="5"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton5Clicked"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn6"
@@ -158,13 +162,14 @@
             android:layout_height="100dp"
             android:layout_row="2"
             android:layout_column="2"
-            android:layout_columnWeight="1"
+
             android:backgroundTint="@color/white"
             android:text="6"
             android:textColor="@color/black"
             android:textSize="25sp"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp" />
+            app:strokeWidth="3dp"
+            android:onClick="onButton6Clicked"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/subtractBtn"
@@ -172,7 +177,7 @@
             android:layout_height="100dp"
             android:layout_row="2"
             android:layout_column="3"
-            android:layout_columnWeight="1"
+            android:onClick="onSubtractButtonClicked"
             android:layout_marginLeft="3dp"
             android:backgroundTint="@color/grey_700"
             android:text="-"
@@ -185,13 +190,16 @@
             android:layout_height="100dp"
             android:layout_row="3"
             android:layout_column="0"
-            android:layout_columnWeight="1"
+
             android:text="1"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton1Clicked"
+            />
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn2"
@@ -199,13 +207,15 @@
             android:layout_height="100dp"
             android:layout_row="3"
             android:layout_column="1"
-            android:layout_columnWeight="1"
+
             android:text="2"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton2Clicked"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn3"
@@ -213,13 +223,15 @@
             android:layout_height="100dp"
             android:layout_row="3"
             android:layout_column="2"
-            android:layout_columnWeight="1"
+
             android:text="3"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton3Clicked"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addBtn"
@@ -232,7 +244,7 @@
             android:layout_marginLeft="3dp"
             android:layout_row="3"
             android:layout_column="3"
-            android:layout_columnWeight="1"/>
+              />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn0"
@@ -240,13 +252,15 @@
             android:layout_height="100dp"
             android:layout_row="4"
             android:layout_column="0"
-            android:layout_columnWeight="1"
+
             android:text="0"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:strokeColor="@color/grey_700"
-            app:strokeWidth="3dp"/>
+            app:strokeWidth="3dp"
+            android:onClick="onButton0Clicked"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPoint"
@@ -254,7 +268,7 @@
             android:layout_height="100dp"
             android:layout_row="4"
             android:layout_column="1"
-            android:layout_columnWeight="1"
+
             android:text="."
             android:textSize="25sp"
             android:textColor="@color/black"
@@ -263,7 +277,7 @@
             app:strokeWidth="3dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/equal"
+            android:id="@+id/equalBtn"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:text="="
@@ -274,7 +288,10 @@
             android:layout_row="4"
             android:layout_column="2"
             android:layout_columnSpan="2"
-            android:layout_columnWeight="1"/>
+            android:layout_columnWeight="2"
+            android:onClick="onButtonEqualsClicked"
+            />
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sineBtn"
@@ -288,7 +305,7 @@
             android:layout_row="5"
             android:layout_column="0"
             android:layout_columnSpan="1"
-            android:layout_columnWeight="1"/>
+              />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cosineBtn"
@@ -302,7 +319,7 @@
             android:layout_row="5"
             android:layout_column="1"
             android:layout_columnSpan="1"
-            android:layout_columnWeight="1"/>
+              />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/tangentBtn"
@@ -316,7 +333,7 @@
             android:layout_row="5"
             android:layout_column="2"
             android:layout_columnSpan="1"
-            android:layout_columnWeight="1"/>
+              />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/logBtn"
@@ -330,7 +347,7 @@
             android:layout_row="6"
             android:layout_column="0"
             android:layout_columnSpan="1"
-            android:layout_columnWeight="1"
+
             android:onClick="onLogButtonClicked"
             />
 
@@ -341,12 +358,12 @@
             android:text="POW"
             android:textColor="@color/white"
             android:backgroundTint="@color/grey_700"
-            android:textSize="25sp"
+            android:textSize="24sp"
             android:layout_marginLeft="3dp"
             android:layout_row="6"
             android:layout_column="1"
             android:layout_columnSpan="1"
-            android:layout_columnWeight="1"
+
             android:onClick="onPowerButtonClicked"
             />
 
@@ -357,12 +374,12 @@
             android:text="SQRT"
             android:textColor="@color/white"
             android:backgroundTint="@color/grey_700"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_marginLeft="3dp"
             android:layout_row="6"
             android:layout_column="2"
             android:layout_columnSpan="1"
-            android:layout_columnWeight="1"
+
             android:onClick="onRootButtonClicked"
             />
 

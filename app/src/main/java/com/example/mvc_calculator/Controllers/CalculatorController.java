@@ -12,75 +12,131 @@ public class CalculatorController {
     private CalculatorModel model;
     private TextView resultTextView;
     private Switch degSwt;
+    private TextView inputTextView;
 
   
-    public CalculatorController(CalculatorModel model, TextView resultTextView) {
+    public CalculatorController(CalculatorModel model, TextView resultTextView, TextView inputTextView) {
         this.model = model;
         this.resultTextView = resultTextView;
+        this.inputTextView = inputTextView;
          //this.degSwt = degSwt;
 
 
     }
 
-    public void onAddButtonClicked(double operand1,double operand2){
-        model.add(operand1,operand2);
-        updateView();
+    public void onAddButtonClicked(){
+        model.add();
+        updateResultView();
     }
 
-    public void onSubtractButtonClicked(double operand1,double operand2){
-        model.subtract(operand1,operand2);
-        updateView();
+    public void onSubtractButtonClicked(){
+        model.subtract();
+        updateResultView();
     }
-    public void onMultiplyButtonClicked(double operand1,double operand2){
-        model.multiply(operand1,operand2);
-        updateView();
-    }
-
-    public void onDivisionButtonClicked(double operand1,double operand2){
-        model.divide(operand1,operand2);
-        updateView();
+    public void onMultiplyButtonClicked(){
+        model.multiply();
+        updateResultView();
     }
 
-
-    public void onLogButtonClicked(double operand1, double operand2) {
-
-        model.logarithm(operand1,operand2);
-        updateView();
+    public void onDivisionButtonClicked(){
+        model.divide();
+        updateResultView();
     }
 
-    public void onPowerButtonClicked(double operand1, double operand2) {
-        model.power(operand1,operand2);
-        updateView();
+
+    public void onLogButtonClicked() {
+
+        model.logarithm();
+        updateResultView();
     }
 
-    public void onRootButtonClicked(double operand1) {
-        model.root(operand1);
-        updateView();
+    public void onPowerButtonClicked() {
+        model.power();
+        updateResultView();
+    }
+
+    public void onRootButtonClicked() {
+        model.root();
+        updateResultView();
     }
 
 
     public void onClearButtonClicked(){
-       resultTextView.setText("0");
+
+        resultTextView.setText("");
+        inputTextView.setText("");
     }
 
-    public void onSineButtonClicked(double operand1){
-        model.sine(operand1);
-        updateView();
+    public void onSineButtonClicked(){
+        model.sine();
+        updateResultView();
     }
 
-    public void onCosineButtonClicked(double operand1){
-        model.cosine(operand1);
-        updateView();
+    public void onCosineButtonClicked(){
+        model.cosine();
+        updateResultView();
     }
 
-    public void onTangentButtonClicked(double operand1){
-        model.tangent(operand1);
-        updateView();
+    public void onTangentButtonClicked(){
+        model.tangent();
+        updateResultView();
     }
-
-    private void updateView(){
+    public void onButton1Clicked(){
+        model.Button1();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton2Clicked(){
+        model.Button2();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton3Clicked(){
+        model.Button3();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton4Clicked(){
+        model.Button4();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton5Clicked(){
+        model.Button5();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton6Clicked(){
+        model.Button6();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton7Clicked(){
+        model.Button7();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton8Clicked(){
+        model.Button8();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton9Clicked(){
+        model.Button9();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    public void onButton0Clicked(){
+        model.Button0();
+        String updateView = model.getInput();
+        updateInputView(updateView);
+    }
+    private void updateResultView(){
         double result = model.getResult();
         resultTextView.setText(String.valueOf(result));
+    }
+    public void updateInputView(String updateView){
+        inputTextView.setText(inputTextView.getText()+ updateView );
     }
 
     public void onSwitchClicked(boolean isChecked){
