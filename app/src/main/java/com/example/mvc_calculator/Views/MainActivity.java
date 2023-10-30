@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton cosineBtn = null; // dead code
     private MaterialButton tangentBtn = null;
     private MaterialButton degBtn = null;
+
+    private MaterialButton rootBtn = null;
     private TextView inputTextView = null;
     private TextView resultTextView =null;
 
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         cosineBtn = findViewById(R.id.cosineBtn); // dead code
         tangentBtn = findViewById(R.id.tangentBtn);
         degBtn = findViewById(R.id.degBtn);
+        rootBtn = findViewById(R.id.rootBtn);
 
         model = new CalculatorModel();
         controller = new CalculatorController(model,resultTextView,inputTextView,degBtn);
@@ -143,9 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onRootButtonClicked (View v) {
 
-        double operand1 = Double.parseDouble(inputTextView.getText().toString());
-        model.setOperand1(operand1);
-        controller.onRootButtonClicked();
+        controller.updateInputView("sqrt");
     }
 
     public void onButtonEqualsClicked(View v){
@@ -213,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
                 controller.onTangentButtonClicked();
             }else if (charSequence.contains("log")){
                 controller.onLogButtonClicked();
+            }else if (charSequence.contains("sqrt")){
+                controller.onRootButtonClicked();
             }
         }
 
