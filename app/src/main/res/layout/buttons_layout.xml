@@ -295,7 +295,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/sineBtn"
+            android:id="@+id/cosineBtn"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:text="COS"
@@ -310,7 +310,7 @@
             />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/cosineBtn"
+            android:id="@+id/sineBtn"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:text="SIN"
@@ -349,7 +349,6 @@
             android:layout_row="6"
             android:layout_column="0"
             android:layout_columnSpan="1"
-
             android:onClick="onLogButtonClicked"
             />
 

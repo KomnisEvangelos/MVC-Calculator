@@ -87,14 +87,14 @@ public class MainActivity extends AppCompatActivity {
         sineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                controller.updateInputView("sin ");
-
+                controller.updateInputView("sin");
             }
         });
+
         tangentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v){
-                controller.updateInputView("tan ");
+                controller.updateInputView("tan");
             }
         });
 
@@ -106,15 +106,14 @@ public class MainActivity extends AppCompatActivity {
        });
     }
 
+    public void onCosineButtonClicked(View v){
+        controller.updateInputView("cos");
+    }
+
     public void onSubtractButtonClicked(View v){
 
         controller.updateInputView(" - ");
 
-    }
-
-
-    public void onCosineButtonClicked(View v){
-        controller.updateInputView("cos ");
     }
 
     public void onMultiplyButtonClicked(View v){
@@ -134,10 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onLogButtonClicked(View v) {
-        //double operand1 = Double.parseDouble(operand1EditText.getText().toString());
-       // double operand2 = Double.parseDouble(operand2EditText.getText().toString()); //Base
-
-       // controller.onLogButtonClicked(operand1,operand2);
+        controller.updateInputView("log");
     }
 
     public void onPowerButtonClicked (View v) {
@@ -153,12 +149,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonEqualsClicked(View v){
-        String charSequnce = inputTextView.getText().toString();
+        String charSequence = inputTextView.getText().toString();
         String pattern = "([\\d.]+)\\s*([+\\-*/^%])\\s*([\\d.]+)";
 
         Pattern regex = Pattern.compile(pattern);
 
-        Matcher matcher = regex.matcher(charSequnce);
+        Matcher matcher = regex.matcher(charSequence);
 
 
         if(matcher.find()){
@@ -193,23 +189,33 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }catch (Exception e){
-                //Toast.makeText(getApplicationContext(),"catch",Toast.LENGTH_SHORT);
                 e.printStackTrace();
 
             }
         }else{
-            if(charSequnce.contains("sin")){
-                //TODO sin
-            }else if (charSequnce.contains("cos")){
-                //TODO cos
-            }else if (charSequnce.contains("tan")){
-                //TODO tan
-            }else if (charSequnce.contains("log")){
-                //TODO log
+
+            String regex2 = "\\d+$";
+            Pattern pattern2 = Pattern.compile(regex2);
+            Matcher matcher2 = pattern2.matcher(charSequence);
+
+            if (matcher2.find()) {
+                String numericPart = matcher2.group();
+
+               double number = Double.parseDouble(numericPart);
+               model.setOperand1(number);
+            }
+
+            if(charSequence.contains("sin")){
+                controller.onSineButtonClicked();
+            }else if (charSequence.contains("cos")){
+                controller.onCosineButtonClicked();
+            }else if (charSequence.contains("tan")){
+                controller.onTangentButtonClicked();
+            }else if (charSequence.contains("log")){
+                controller.onLogButtonClicked();
             }
         }
 
-        Log.d("Status","out");
 
     }
 

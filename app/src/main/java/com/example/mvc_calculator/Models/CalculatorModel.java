@@ -1,7 +1,7 @@
 package com.example.mvc_calculator.Models;
 
 public class CalculatorModel {
-    private double result;
+    private double result = 0;
     private boolean isRad=false;
     private String input;
 
