@@ -4,17 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mvc_calculator.Controllers.CalculatorController;
 import com.example.mvc_calculator.Models.CalculatorModel;
 import com.example.mvc_calculator.R;
 import com.google.android.material.button.MaterialButton;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -73,70 +78,61 @@ public class MainActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //double operand1 = Double.parseDouble(operand1EditText.getText().toString());
-                //double operand2 = Double.parseDouble(operand2EditText.getText().toString());
-
-                controller.onAddButtonClicked(operand1,operand2);
-
+                controller.updateInputView(" + ");
             }
         });
 
         sineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // double operand1 = Double.parseDouble(operand1EditText.getText().toString());
+                double operand1 = Double.parseDouble(inputTextView.getText().toString());
+                model.setOperand1(operand1);
+                controller.onSineButtonClicked();
 
-                controller.onSineButtonClicked(operand1);
             }
         });
         tangentBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-               // double operand1 = Double.parseDouble(operand1EditText.getText().toString());
-
-                controller.onTangentButtonClicked(operand1);
+                double operand1 = Double.parseDouble(inputTextView.getText().toString());
+                model.setOperand1(operand1);
+                controller.onTangentButtonClicked();
             }
         });
 
-        degSwt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if (isChecked){
-                    controller.onSwitchClicked(true);
-                }else{
-                    controller.onSwitchClicked(false);
-                }
-            }
-        });
+//        degSwt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//
+//                if (isChecked){
+//                    controller.onSwitchClicked(true);
+//                }else{
+//                    controller.onSwitchClicked(false);
+//                }
+//            }
+//        });
     }
 
     public void onSubtractButtonClicked(View v){
-        //double operand1 = Double.parseDouble(operand1EditText.getText().toString());
-       // double operand2 = Double.parseDouble(operand2EditText.getText().toString());
 
-        controller.onSubtractButtonClicked(operand1,operand2);
+        controller.updateInputView(" - ");
 
     }
 
 
     public void onCosineButtonClicked(View v){
-       // double operand1 = Double.parseDouble(operand1EditText.getText().toString());
-
-        controller.onCosineButtonClicked(operand1);
+        double operand1 = Double.parseDouble(inputTextView.getText().toString());
+        model.setOperand1(operand1);
+        controller.onCosineButtonClicked();
     }
 
     public void onMultiplyButtonClicked(View v){
-       //double operand1 = Double.parseDouble(operand1EditText.getText().toString());
-       // double operand2 = Double.parseDouble(operand2EditText.getText().toString());
 
-        controller.onMultiplyButtonClicked(operand1,operand2);
+        controller.updateInputView(" * ");
 
     }
     public void onDivisionButtonClicked(View v){
-       // double operand1 = Double.parseDouble(operand1EditText.getText().toString());
-      //  double operand2 = Double.parseDouble(operand2EditText.getText().toString());
 
-        controller.onDivisionButtonClicked(operand1,operand2);
+        controller.updateInputView(" / ");
     }
 
 
@@ -144,21 +140,72 @@ public class MainActivity extends AppCompatActivity {
         //double operand1 = Double.parseDouble(operand1EditText.getText().toString());
        // double operand2 = Double.parseDouble(operand2EditText.getText().toString()); //Base
 
-        controller.onLogButtonClicked(operand1,operand2);
+       // controller.onLogButtonClicked(operand1,operand2);
     }
 
     public void onPowerButtonClicked (View v) {
 
-       // double operand1 = Double.parseDouble(operand1EditText.getText().toString()); //Base
-       // double operand2 = Double.parseDouble(operand2EditText.getText().toString());  //Exponent
-
-        controller.onPowerButtonClicked(operand1,operand2);
+        controller.updateInputView(" ^ ");
     }
 
     public void onRootButtonClicked (View v) {
-       // double operand1 = Double.parseDouble(operand1EditText.getText().toString());
 
-        controller.onRootButtonClicked(operand1);
+        double operand1 = Double.parseDouble(inputTextView.getText().toString());
+        model.setOperand1(operand1);
+        controller.onRootButtonClicked();
+    }
+
+    public void onButtonEqualsClicked(View v){
+        String charSequnce = inputTextView.getText().toString();
+        String pattern = "([\\d.]+)\\s*([+\\-*/^%])\\s*([\\d.]+)";
+
+        Pattern regex = Pattern.compile(pattern);
+
+        Matcher matcher = regex.matcher(charSequnce);
+
+
+        if(matcher.find()){
+            try{
+                String operand1 = matcher.group(1);
+                String operator = matcher.group(2);
+                String operand2 = matcher.group(3);
+
+                model.setOperand1(Double.parseDouble(operand1));
+                model.setOperand2(Double.parseDouble(operand2));
+
+                switch (operator){
+                    case "+":
+                        controller.onAddButtonClicked();
+                        break;
+                    case "-":
+                        controller.onSubtractButtonClicked();
+                        break;
+                    case "*":
+                        controller.onMultiplyButtonClicked();
+                        break;
+                    case "/":
+                        controller.onDivisionButtonClicked();
+                        break;
+                    case "%":
+                        //mod
+                        break;
+                    case "^":
+                        controller.onPowerButtonClicked();
+                    default:
+                        break;
+                }
+
+            }catch (Exception e){
+                //Toast.makeText(getApplicationContext(),"catch",Toast.LENGTH_SHORT);
+                e.printStackTrace();
+
+            }
+        }else{
+
+        }
+
+        Log.d("Status","out");
+
     }
 
     public void onClearButtonClicked(View v){

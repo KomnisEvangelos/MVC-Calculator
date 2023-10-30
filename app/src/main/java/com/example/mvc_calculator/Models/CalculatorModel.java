@@ -5,6 +5,9 @@ public class CalculatorModel {
     private boolean isRad=false;
     private String input;
 
+    private double operand1 = 0;
+    private double operand2 = 0;
+
     public boolean isRad() {
         return isRad;
     }
@@ -13,18 +16,18 @@ public class CalculatorModel {
         this.isRad = isRad;
     }
 
-    public void add(double operand1, double operand2){
+    public void add(){
         this.result = operand1 + operand2;
     }
 
-    public void subtract(double operand1, double operand2){
+    public void subtract(){
         this.result = operand1 - operand2;
     }
 
-    public void multiply(double operand1, double operand2){
+    public void multiply(){
         this.result = operand1 * operand2;
     }
-    public void divide(double operand1, double operand2) {
+    public void divide() {
 
         if (operand2 != 0) {
             this.result = operand1 / operand2;
@@ -34,7 +37,7 @@ public class CalculatorModel {
     }
 
 
-    public void sine(double operand1){
+    public void sine(){
 
         if (isRad()){
             this.result = Math.sin(operand1);
@@ -43,7 +46,7 @@ public class CalculatorModel {
             this.result = Math.sin(degrees);
         }
     }
-    public void cosine(double operand1) {
+    public void cosine() {
         if (isRad()) {
             this.result = Math.cos(operand1);
         } else {
@@ -51,7 +54,7 @@ public class CalculatorModel {
             this.result = Math.cos(degrees);
         }
     }
-    public void tangent(double operand1) {
+    public void tangent() {
         if (isRad()) {
             this.result = Math.tan(operand1);
         } else {
@@ -62,15 +65,15 @@ public class CalculatorModel {
 
 
 
-    public void logarithm(double operand1, double operand2) {
+    public void logarithm() {
         this.result = (Math.log(operand1) / Math.log(operand2));
     }
 
-    public void power(double operand1, double operand2) {
+    public void power() {
         this.result = Math.pow(operand1,operand2);
     }
 
-    public void root(double operand1) {
+    public void root() {
 
         this.result = Math.sqrt(operand1);
     }
@@ -108,6 +111,22 @@ public class CalculatorModel {
 
     public String getInput() {
         return input;
+    }
+
+    public double getOperand1() {
+        return operand1;
+    }
+
+    public double getOperand2() {
+        return operand2;
+    }
+
+    public void setOperand1(double operand1) {
+        this.operand1 = operand1;
+    }
+
+    public void setOperand2(double operand2) {
+        this.operand2 = operand2;
     }
 
     public double getResult() {
