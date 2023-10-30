@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton buttonSub = null;
     private MaterialButton buttonMultiply = null;
     private MaterialButton buttonDivide = null;
-    private MaterialButton buttonPercent = null;
+    private MaterialButton buttonPercent = null; // dead code
     private MaterialButton buttonClear = null;
     private MaterialButton buttonOFF = null;
     private MaterialButton buttonEqual = null;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton sineBtn = null;
     private MaterialButton cosineBtn = null; // dead code
     private MaterialButton tangentBtn = null;
-    private MaterialButton degSwt = null;
+    private MaterialButton degBtn = null;
     private TextView inputTextView = null;
     private TextView resultTextView =null;
 
@@ -62,18 +62,20 @@ public class MainActivity extends AppCompatActivity {
 
         resultTextView = findViewById(R.id.resultTextView);
         inputTextView = findViewById(R.id.inputTextView);
-       
-        model = new CalculatorModel();
-        controller = new CalculatorController(model,resultTextView,inputTextView);
-
-
 
         addBtn = findViewById(R.id.addBtn);
         subtractBtn = findViewById(R.id.subtractBtn); // dead code
         sineBtn = findViewById(R.id.sineBtn);
         cosineBtn = findViewById(R.id.cosineBtn); // dead code
         tangentBtn = findViewById(R.id.tangentBtn);
-        degSwt = findViewById(R.id.degSwt);
+        degBtn = findViewById(R.id.degBtn);
+
+        model = new CalculatorModel();
+        controller = new CalculatorController(model,resultTextView,inputTextView,degBtn);
+
+
+
+
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,17 +101,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        degSwt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//
-//                if (isChecked){
-//                    controller.onSwitchClicked(true);
-//                }else{
-//                    controller.onSwitchClicked(false);
-//                }
-//            }
-//        });
+       degBtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               controller.onDegButton();
+           }
+       });
     }
 
     public void onSubtractButtonClicked(View v){
@@ -133,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
     public void onDivisionButtonClicked(View v){
 
         controller.updateInputView(" / ");
+    }
+
+    public void onPercentButtonClicked(View v){
+        controller.updateInputView(" % ");
+
     }
 
 
@@ -187,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                         controller.onDivisionButtonClicked();
                         break;
                     case "%":
-                        //mod
+                        controller.onPercentButtonClicked();
                         break;
                     case "^":
                         controller.onPowerButtonClicked();

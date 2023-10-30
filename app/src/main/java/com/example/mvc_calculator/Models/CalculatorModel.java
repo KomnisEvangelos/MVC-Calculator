@@ -12,8 +12,9 @@ public class CalculatorModel {
         return isRad;
     }
 
-    public void setRadStatus(boolean isRad) {
-        this.isRad = isRad;
+    public void setRadStatus() {
+        this.isRad = !isRad();
+
     }
 
     public void add(){
@@ -33,7 +34,12 @@ public class CalculatorModel {
             this.result = operand1 / operand2;
         }else{
             this.result = Double.NaN;
+
         }
+    }
+
+    public void percent(){
+        this.result = operand1 % operand2;
     }
 
 

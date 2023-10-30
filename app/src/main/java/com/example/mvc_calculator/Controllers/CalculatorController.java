@@ -7,19 +7,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.mvc_calculator.Models.CalculatorModel;
+import com.google.android.material.button.MaterialButton;
 
 public class CalculatorController {
     private CalculatorModel model;
     private TextView resultTextView;
-    private Switch degSwt;
+    private MaterialButton degBtn;
     private TextView inputTextView;
 
   
-    public CalculatorController(CalculatorModel model, TextView resultTextView, TextView inputTextView) {
+    public CalculatorController(CalculatorModel model, TextView resultTextView, TextView inputTextView,MaterialButton degBtn) {
         this.model = model;
         this.resultTextView = resultTextView;
         this.inputTextView = inputTextView;
-         //this.degSwt = degSwt;
+        this.degBtn = degBtn;
 
 
     }
@@ -43,6 +44,10 @@ public class CalculatorController {
         updateResultView();
     }
 
+    public void onPercentButtonClicked(){
+        model.percent();
+        updateResultView();
+    }
 
     public void onLogButtonClicked() {
 
@@ -139,13 +144,12 @@ public class CalculatorController {
         inputTextView.setText(inputTextView.getText()+ updateView );
     }
 
-    public void onSwitchClicked(boolean isChecked){
-        if (isChecked) {
-            model.setRadStatus(false);
-            degSwt.setText("degres");
+    public void onDegButton(){
+        model.setRadStatus();
+        if (model.isRad()){
+            degBtn.setText("RAD");
         }else{
-            model.setRadStatus(true);
-            degSwt.setText("radius");
+            degBtn.setText("DEG");
         }
     }
 }
