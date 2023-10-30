@@ -7,77 +7,83 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.mvc_calculator.Models.CalculatorModel;
+import com.google.android.material.button.MaterialButton;
 
 public class CalculatorController {
     private CalculatorModel model;
     private TextView resultTextView;
-    private Switch degSwt;
-
+    private MaterialButton degBtn;
     private TextView inputTextView;
 
   
-    public CalculatorController(CalculatorModel model, TextView resultTextView, TextView inputTextView) {
+    public CalculatorController(CalculatorModel model, TextView resultTextView, TextView inputTextView,MaterialButton degBtn) {
         this.model = model;
         this.resultTextView = resultTextView;
         this.inputTextView = inputTextView;
-         //this.degSwt = degSwt;
+        this.degBtn = degBtn;
 
 
     }
 
-    public void onAddButtonClicked(double operand1,double operand2){
-        model.add(operand1,operand2);
+    public void onAddButtonClicked(){
+        model.add();
         updateResultView();
     }
 
-    public void onSubtractButtonClicked(double operand1,double operand2){
-        model.subtract(operand1,operand2);
+    public void onSubtractButtonClicked(){
+        model.subtract();
         updateResultView();
     }
-    public void onMultiplyButtonClicked(double operand1,double operand2){
-        model.multiply(operand1,operand2);
-        updateResultView();
-    }
-
-    public void onDivisionButtonClicked(double operand1,double operand2){
-        model.divide(operand1,operand2);
+    public void onMultiplyButtonClicked(){
+        model.multiply();
         updateResultView();
     }
 
-
-    public void onLogButtonClicked(double operand1, double operand2) {
-
-        model.logarithm(operand1,operand2);
+    public void onDivisionButtonClicked(){
+        model.divide();
         updateResultView();
     }
 
-    public void onPowerButtonClicked(double operand1, double operand2) {
-        model.power(operand1,operand2);
+    public void onPercentButtonClicked(){
+        model.percent();
         updateResultView();
     }
 
-    public void onRootButtonClicked(double operand1) {
-        model.root(operand1);
+    public void onLogButtonClicked() {
+
+        model.logarithm();
+        updateResultView();
+    }
+
+    public void onPowerButtonClicked() {
+        model.power();
+        updateResultView();
+    }
+
+    public void onRootButtonClicked() {
+        model.root();
         updateResultView();
     }
 
 
     public void onClearButtonClicked(){
-       resultTextView.setText("0");
+
+        resultTextView.setText("");
+        inputTextView.setText("");
     }
 
-    public void onSineButtonClicked(double operand1){
-        model.sine(operand1);
+    public void onSineButtonClicked(){
+        model.sine();
         updateResultView();
     }
 
-    public void onCosineButtonClicked(double operand1){
-        model.cosine(operand1);
+    public void onCosineButtonClicked(){
+        model.cosine();
         updateResultView();
     }
 
-    public void onTangentButtonClicked(double operand1){
-        model.tangent(operand1);
+    public void onTangentButtonClicked(){
+        model.tangent();
         updateResultView();
     }
     public void onButton1Clicked(){
@@ -134,17 +140,16 @@ public class CalculatorController {
         double result = model.getResult();
         resultTextView.setText(String.valueOf(result));
     }
-    private void updateInputView(String updateView){
+    public void updateInputView(String updateView){
         inputTextView.setText(inputTextView.getText()+ updateView );
     }
 
-    public void onSwitchClicked(boolean isChecked){
-        if (isChecked) {
-            model.setRadStatus(false);
-            degSwt.setText("degres");
+    public void onDegButton(){
+        model.setRadStatus();
+        if (model.isRad()){
+            degBtn.setText("RAD");
         }else{
-            model.setRadStatus(true);
-            degSwt.setText("radius");
+            degBtn.setText("DEG");
         }
     }
 }
