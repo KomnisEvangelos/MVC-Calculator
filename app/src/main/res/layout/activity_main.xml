@@ -1,40 +1,50 @@
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context=".Views.MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/resultTextView"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/operand1EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_numbers_24"
-        android:hint="@string/operand1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="40sp"
+            android:textColor="@color/grey_700"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:id="@+id/inputTextView"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="60sp"
+            android:textColor="@color/grey_700"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:id="@+id/resultTextView"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/operand2EditText"
-        android:hint="@string/operand2"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_numbers_24"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/white"
+            android:gravity="bottom">
 
-    <Button
+            <include
+                layout="@layout/buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
+<<<<<<< HEAD
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,3 +159,8 @@
 
 
 </LinearLayout>
+=======
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+>>>>>>> 5ffa22bb6e1b70785fc920317d43f921e2002141

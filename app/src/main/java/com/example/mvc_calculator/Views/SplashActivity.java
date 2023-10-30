@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
                     });
 
                     try {
-                        Thread.sleep(200);
+                        Thread.sleep(50);
                     }catch (InterruptedException e){
                         e.printStackTrace();
                     }
