@@ -1,150 +1,49 @@
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context=".Views.MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/resultTextView"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/operand1EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_numbers_24"
-        android:hint="@string/operand1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="40sp"
+            android:textColor="@color/grey_700"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:id="@+id/inputTextView"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="60sp"
+            android:textColor="@color/grey_700"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:id="@+id/resultTextView"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/operand2EditText"
-        android:hint="@string/operand2"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_numbers_24"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/white"
+            android:gravity="bottom">
 
-    <Button
+            <include
+                layout="@layout/buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        android:id="@+id/addBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:contentDescription="This is an ADD button"
-        android:shadowColor="@color/white"
-        android:text="+"
-        android:textColor="@color/black"
-        tools:src="@drawable/buttonplusshadow" />
-
-    <Button
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:text="-"
-        android:id="@+id/subtractBtn"
-        android:onClick="onSubtractButtonClicked"
-        />
-
-    <Button
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:text="sin"
-        android:id="@+id/sineBtn"
-        />
-
-    <Button
-        android:id="@+id/multiplyBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onMultiplyButtonClicked"
-        android:shadowColor="@color/white"
-        android:text="*"
-        android:textColor="@color/black"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:text="cos"
-        android:id="@+id/cosineBtn"
-        android:onClick="onCosineButtonClicked"
-      
-        <Button
-        android:id="@+id/divisionBtn"
-        android:text="/"
-        android:onClick="onDivisionButtonClicked"
-        />
-  
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:id="@+id/ClearBtn"
-        android:text="C"
-        android:onClick="onClearButtonClicked"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:text="tan"
-        android:id="@+id/tangentBtn"
-        android:onClick="onTangentButtonClicked"
-        />
-
-
-    <Switch
-        android:id="@+id/degSwt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Deg"
-        android:checked="true"
-        />
-
-<Button
-        android:id="@+id/logBtn"
-        android:text="log"
-        android:onClick="onLogButtonClicked"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:id="@+id/powerBtn"
-        android:text="x^y"
-        android:onClick="onPowerButtonClicked"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:id="@+id/rootBtn"
-        android:text="√x"
-        android:onClick="onRootButtonClicked"
-        />
-
-
-</LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

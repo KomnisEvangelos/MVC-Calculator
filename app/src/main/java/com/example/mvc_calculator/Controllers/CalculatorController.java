@@ -12,16 +12,12 @@ public class CalculatorController {
     private CalculatorModel model;
     private TextView resultTextView;
     private Switch degSwt;
-    private EditText operand1EditText;
-    private EditText operand2EditText;
+
   
-    public CalculatorController(CalculatorModel model, TextView resultTextView,EditText operand1EditText,
-                                EditText operand2EditText,Switch degSwt) {
+    public CalculatorController(CalculatorModel model, TextView resultTextView) {
         this.model = model;
         this.resultTextView = resultTextView;
-        this.operand1EditText = operand1EditText;
-        this.operand2EditText = operand2EditText;
-         this.degSwt = degSwt;
+         //this.degSwt = degSwt;
 
 
     }
@@ -64,8 +60,6 @@ public class CalculatorController {
 
 
     public void onClearButtonClicked(){
-       operand1EditText.setText("");
-       operand2EditText.setText("");
        resultTextView.setText("0");
     }
 

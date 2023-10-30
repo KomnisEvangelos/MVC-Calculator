@@ -32,7 +32,7 @@ public class CalculatorModel {
         }
     }
 
-<
+
     public void sine(double operand1){
 
         if (isRad()){
@@ -73,6 +73,38 @@ public class CalculatorModel {
 
         this.result = Math.sqrt(operand1);
     }
+
+    public void Button1(){
+
+    }
+    public void Button2(){
+
+    }
+    public void Button3(){
+
+    }
+    public void Button4(){
+
+    }
+    public void Button5(){
+
+    }
+    public void Button6(){
+
+    }
+    public void Button7(){
+
+    }
+    public void Button8(){
+
+    }
+    public void Button9(){
+
+    }
+    public void Button0(){
+
+    }
+
 
 
 
