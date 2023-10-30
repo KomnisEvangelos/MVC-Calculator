@@ -87,17 +87,14 @@ public class MainActivity extends AppCompatActivity {
         sineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double operand1 = Double.parseDouble(inputTextView.getText().toString());
-                model.setOperand1(operand1);
-                controller.onSineButtonClicked();
+
+                controller.updateInputView("sin ");
 
             }
         });
         tangentBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                double operand1 = Double.parseDouble(inputTextView.getText().toString());
-                model.setOperand1(operand1);
-                controller.onTangentButtonClicked();
+                controller.updateInputView("tan ");
             }
         });
 
@@ -117,9 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onCosineButtonClicked(View v){
-        double operand1 = Double.parseDouble(inputTextView.getText().toString());
-        model.setOperand1(operand1);
-        controller.onCosineButtonClicked();
+        controller.updateInputView("cos ");
     }
 
     public void onMultiplyButtonClicked(View v){
@@ -203,7 +198,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }else{
-
+            if(charSequnce.contains("sin")){
+                //TODO sin
+            }else if (charSequnce.contains("cos")){
+                //TODO cos
+            }else if (charSequnce.contains("tan")){
+                //TODO tan
+            }else if (charSequnce.contains("log")){
+                //TODO log
+            }
         }
 
         Log.d("Status","out");
