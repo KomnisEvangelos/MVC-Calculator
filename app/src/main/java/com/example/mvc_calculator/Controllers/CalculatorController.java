@@ -81,7 +81,10 @@ public class CalculatorController {
         model.cosine();
         updateResultView();
     }
-
+    public void onFactorialButtonCLlicked(){
+        model.factorial();
+        updateResultView();
+    }
     public void onTangentButtonClicked(){
         model.tangent();
         updateResultView();
