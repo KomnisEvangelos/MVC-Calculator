@@ -28,6 +28,12 @@ public class CalculatorModel {
     public void multiply(){
         this.result = operand1 * operand2;
     }
+    public void factorial(){
+        this.result= 1;
+        for (int i = 1 ; i<= operand1;i++){
+         this.result *=i;
+        }
+    }
     public void divide() {
 
         if (operand2 != 0) {

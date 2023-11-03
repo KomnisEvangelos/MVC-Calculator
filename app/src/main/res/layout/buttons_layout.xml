@@ -383,6 +383,19 @@
 
             android:onClick="onRootButtonClicked"
             />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/factorialBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="x!"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/grey_700"
+            android:textSize="25sp"
+            android:layout_marginLeft="3dp"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:onClick="onFactorialButtonClicked"
+            />
 
 
     </GridLayout>

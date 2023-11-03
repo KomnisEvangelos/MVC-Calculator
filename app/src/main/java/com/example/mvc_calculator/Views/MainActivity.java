@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton cosineBtn = null; // dead code
     private MaterialButton tangentBtn = null;
     private MaterialButton degBtn = null;
+    private MaterialButton fact= null;
 
     private MaterialButton rootBtn = null;
     private TextView inputTextView = null;
@@ -148,7 +149,9 @@ public class MainActivity extends AppCompatActivity {
 
         controller.updateInputView("sqrt");
     }
-
+    public void onFactorialButtonClicked(View v){
+        controller.updateInputView("!");
+    }
     public void onButtonEqualsClicked(View v){
         String charSequence = inputTextView.getText().toString();
         String pattern = "([\\d.]+)\\s*([+\\-*/^%])\\s*([\\d.]+)";
@@ -157,8 +160,22 @@ public class MainActivity extends AppCompatActivity {
 
         Matcher matcher = regex.matcher(charSequence);
 
+        if (charSequence.contains("!")){
+            int indexOfExclamation = charSequence.indexOf('!');
+            if (indexOfExclamation != -1) {
+                String operand1Str = charSequence.substring(0, indexOfExclamation).trim();
+                if (!operand1Str.isEmpty()) {
+                    try {
+                        double operand1 = Double.parseDouble(operand1Str);
+                        model.setOperand1(operand1);
+                        controller.onFactorialButtonCLlicked();
+                    } catch (NumberFormatException e) {
 
-        if(matcher.find()){
+                    }
+                }
+            }
+        }
+        else if(matcher.find()){
             try{
                 String operand1 = matcher.group(1);
                 String operator = matcher.group(2);
@@ -185,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "^":
                         controller.onPowerButtonClicked();
+
                     default:
                         break;
                 }
