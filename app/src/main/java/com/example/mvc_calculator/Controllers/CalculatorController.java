@@ -81,6 +81,10 @@ public class CalculatorController {
         model.cosine();
         updateResultView();
     }
+    public void onAcosineButtonClicked(){
+        model.acosine();
+        updateResultView();
+    }
     public void onFactorialButtonCLlicked(){
         model.factorial();
         updateResultView();

@@ -65,6 +65,15 @@ public class CalculatorModel {
             double degrees = Math.toRadians(operand1);
             this.result = Math.cos(degrees);
         }
+
+    }
+    public void acosine() {
+        if (isRad()) {
+            this.result = Math.acos(operand1);
+        } else {
+            double degrees = Math.toRadians(operand1);
+            this.result = Math.acos(degrees);
+        }
     }
     public void tangent() {
         if (isRad()) {

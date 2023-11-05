@@ -308,7 +308,20 @@
             android:layout_columnSpan="1"
             android:onClick="onCosineButtonClicked"
             />
-
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/acosineBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="ACOS"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/grey_700"
+            android:textSize="20sp"
+            android:layout_marginLeft="3dp"
+            android:layout_row="5"
+            android:layout_column="3"
+            android:layout_columnSpan="1"
+            android:onClick="onAcosineButtonClicked"
+            />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sineBtn"
             android:layout_width="wrap_content"

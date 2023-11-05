@@ -113,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
     public void onCosineButtonClicked(View v){
         controller.updateInputView("cos");
     }
+    public void onAcosineButtonClicked(View v){
+        controller.updateInputView("acos");
+    }
 
     public void onSubtractButtonClicked(View v){
 
@@ -234,6 +237,8 @@ public class MainActivity extends AppCompatActivity {
                 controller.onLogButtonClicked();
             }else if (charSequence.contains("sqrt")){
                 controller.onRootButtonClicked();
+            }else if (charSequence.contains("acos")){
+                controller.onAcosineButtonClicked();
             }
         }
 
