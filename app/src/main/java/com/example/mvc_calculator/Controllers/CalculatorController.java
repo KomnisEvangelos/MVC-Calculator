@@ -1,5 +1,6 @@
 package com.example.mvc_calculator.Controllers;
 
+import android.view.View;
 import android.widget.Switch;
 
 import android.widget.EditText;
@@ -25,6 +26,9 @@ public class CalculatorController {
 
     }
 
+    public void onCosineButtonClicked(View v){
+        updateInputView("cos");
+    }
     public void onAddButtonClicked(){
         model.add();
         updateResultView();
